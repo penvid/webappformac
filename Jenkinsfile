@@ -1,4 +1,4 @@
-node{
+node('slave1'){
     def mavenHome = tool name: 'maven', type: 'maven'
     sh "${mavenHome}/bin/mvn -v"
 
@@ -11,7 +11,7 @@ node{
     stage('Build')
     {
         echo 'Build stage'
-        sh "${mavenHome}/bin/mvn package -f /var/lib/jenkins/workspace/webappformac/pom.xml"
+        sh "${mavenHome}/bin/mvn package -f $WORKSPACE/pom.xml"
     }
     stage('Junit testing')
     {
@@ -20,7 +20,7 @@ node{
     stage('upload to nexus')
     {
         echo 'nexus'
-        nexusArtifactUploader artifacts: [[artifactId: 'webappformac', classifier: '', file: '/var/lib/jenkins/workspace/webappformac/target/webappformac.war', type: 'war']], credentialsId: 'nexus-cred', groupId: 'com.mywebproject', nexusUrl: '127.0.0.1:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.0-SNAPSHOT'
+        nexusArtifactUploader artifacts: [[artifactId: 'webappformac', classifier: '', file: '$WORKSPACE/target/webappformac.war', type: 'war']], credentialsId: 'nexus-cred', groupId: 'com.mywebproject', nexusUrl: '127.0.0.1:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.0-SNAPSHOT'
     }
     stage('Deploy')
     {
