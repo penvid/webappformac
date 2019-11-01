@@ -9,6 +9,8 @@
   <url>http://maven.apache.org</url>
 <scm>
      <connection>scm:git:https://github.com/penvid/webappformac.git</connection>
+     <developerConnection>scm:git:https://github.com/penvid/webappformac.git</developerConnection>
+     <tag>HEAD</tag>
   </scm>
 
 
