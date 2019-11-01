@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mywebproject</groupId>
+  <artifactId>webappformac</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>webappformac Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+<scm>
+     <connection>scm:git:https://github.com/penvid/iphone11.git</connection>
+    <tag>iphone11-1.2</tag>
+  </scm>
+
+
+<distributionManagement>
+    <repository>
+       <id>release</id>
+       <url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
+   </repository>
+   <snapshotRepository>
+    <id>snapshots</id>
+    <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+   </snapshotRepository>
+  </distributionManagement>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>webappformac</finalName>
+  </build>
+</project>
