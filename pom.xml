@@ -8,8 +8,7 @@
   <name>webappformac Maven Webapp</name>
   <url>http://maven.apache.org</url>
 <scm>
-     <connection>scm:git:https://github.com/penvid/iphone11.git</connection>
-    <tag>iphone11-1.2</tag>
+     <connection>scm:git:https://github.com/penvid/webappformac.git</connection>
   </scm>
 
 
