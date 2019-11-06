@@ -20,7 +20,7 @@ node('slave1'){
     stage('upload to nexus')
     {
         echo 'nexus'
-        nexusArtifactUploader artifacts: [[artifactId: 'webappformac', classifier: '', file: '/home/jenkins/jenkins_slave/workspace/webappformac/target/webappformac.war', type: 'war']], credentialsId: 'nexus-cred', groupId: 'com.mywebproject', nexusUrl: '172.31.118.88:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.1-SNAPSHOT'
+        nexusArtifactUploader artifacts: [[artifactId: 'webappformac', classifier: '', file: '$WORKSPACE/target/webappformac.war', type: 'war']], credentialsId: 'nexus-cred', groupId: 'com.mywebproject', nexusUrl: '172.31.118.88:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.1-SNAPSHOT'
     }
     stage('Deploy')
     {
